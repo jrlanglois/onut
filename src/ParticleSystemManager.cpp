@@ -27,7 +27,7 @@ namespace onut
 
     void ParticleSystemManager::EmitterInstance::setTransform(const Vector3& pos, const Vector3& dir, const Vector3& up)
     {
-        Matrix transform = Matrix::CreateBillboard(pos, pos + up, dir);
+        Matrix transform = Matrix::LookAtFromDirection(dir, up);
         setTransform(transform);
     }
 
@@ -165,7 +165,7 @@ namespace onut
         instance.m_id = nextId++;
         instance.m_pParticleSystemManager = this;
 
-        Matrix transform = Matrix::CreateBillboard(pos, pos + dir, Vector3::UnitY);
+        Matrix transform = Matrix::LookAtFromDirection(dir, Vector3::UnitY);
         auto& emitters = pParticleSystem->getEmitters();
         for (auto& emitter : emitters)
         {

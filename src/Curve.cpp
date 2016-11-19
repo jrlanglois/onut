@@ -54,7 +54,7 @@ namespace onut
 
     Matrix lerp(const Matrix& from, const Matrix& to, float t)
     {
-        return Matrix::Lerp(from, to, t);
+        return from + (to - from) * t;
     }
 
     Color lerp(const Color& from, const Color& to, float t)

@@ -78,7 +78,7 @@ namespace onut
         auto& pEntity = getEntity();
         auto& pSceneManager = pEntity->getSceneManager();
         auto pPhysic = pSceneManager->getPhysic2DWorld();
-        Vector2 pos = pEntity->getWorldTransform().Translation();
+        Vector2 pos = pEntity->getWorldTransform().GetTranslation();
 
         b2BodyDef bodyDef;
         if (pEntity->isStatic())
@@ -167,7 +167,7 @@ namespace onut
     {
         if (m_pBody)
         {
-            Vector2 position = getEntity()->getWorldTransform().Translation();
+            Vector2 position = getEntity()->getWorldTransform().GetTranslation();
             if (m_trigger)
             {
                 m_pBody->SetTransform(b2Vec2(position.x / m_physicScale, position.y / m_physicScale), 0.0f);
@@ -178,7 +178,7 @@ namespace onut
                 Vector2 currentPosition(b2Position.x * m_physicScale, b2Position.y * m_physicScale);
                 if (currentPosition != position)
                 {
-                    getEntity()->setWorldTransform(Matrix::CreateTranslation(currentPosition));
+                    getEntity()->setWorldTransform(Matrix::Translation(currentPosition));
                 }
                 Vector2 vel = m_velocity / m_physicScale;
                 m_pBody->SetLinearVelocity(b2Vec2(vel.x, vel.y));
@@ -192,7 +192,7 @@ namespace onut
         if (m_pBody)
         {
             b2Vec2 b2Pos(position.x / m_physicScale, position.y / m_physicScale);
-            getEntity()->setWorldTransform(Matrix::CreateTranslation(position));
+            getEntity()->setWorldTransform(Matrix::Translation(position));
             m_pBody->SetTransform(b2Pos, 0.0f);
         }
     }

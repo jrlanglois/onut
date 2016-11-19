@@ -17,7 +17,7 @@
 OEntityRef OCreateCollider2DEntity(const Vector2& size, const Vector2& position)
 {
     auto pRet = OEntity::create();
-    pRet->setLocalTransform(Matrix::CreateTranslation(position));
+    pRet->setLocalTransform(Matrix::Translation(position));
     auto pCollider = pRet->addComponent<OCollider2DComponent>();
     pCollider->setSize(size);
     return pRet;
@@ -26,7 +26,7 @@ OEntityRef OCreateCollider2DEntity(const Vector2& size, const Vector2& position)
 OEntityRef OCreateSoundEntity(const std::string& sound, const Vector2& position, float volume)
 {
     auto pRet = OEntity::create();
-    pRet->setLocalTransform(Matrix::CreateTranslation(position));
+    pRet->setLocalTransform(Matrix::Translation(position));
     auto pSoundComponent = pRet->addComponent<OSoundComponent>();
     pSoundComponent->setSound(OGetSound(sound));
     pSoundComponent->setVolume(volume);
@@ -36,7 +36,7 @@ OEntityRef OCreateSoundEntity(const std::string& sound, const Vector2& position,
 OEntityRef OCreateSpriteAnimEntity(const std::string& filename, const Vector2& position, const std::string& defaultAnim)
 {
     auto pRet = OEntity::create();
-    pRet->setLocalTransform(Matrix::CreateTranslation(position));
+    pRet->setLocalTransform(Matrix::Translation(position));
     auto pSpriteComponent = pRet->addComponent<OSpriteAnimComponent>();
     pSpriteComponent->setSpriteAnim(OGetSpriteAnim(filename));
     pSpriteComponent->setDefaultAnim(defaultAnim);
@@ -46,7 +46,7 @@ OEntityRef OCreateSpriteAnimEntity(const std::string& filename, const Vector2& p
 OEntityRef OCreateSpriteEntity(const std::string& filename, const Vector2& position)
 {
     auto pRet = OEntity::create();
-    pRet->setLocalTransform(Matrix::CreateTranslation(position));
+    pRet->setLocalTransform(Matrix::Translation(position));
     auto pSpriteComponent = pRet->addComponent<OSpriteComponent>();
     pSpriteComponent->setTexture(OGetTexture(filename));
     return pRet;
@@ -55,7 +55,7 @@ OEntityRef OCreateSpriteEntity(const std::string& filename, const Vector2& posit
 OEntityRef OCreateTextEntity(const std::string& font, const std::string& text, const Vector2& position)
 {
     auto pRet = OEntity::create();
-    pRet->setLocalTransform(Matrix::CreateTranslation(position));
+    pRet->setLocalTransform(Matrix::Translation(position));
     auto pTextComponent = pRet->addComponent<OTextComponent>();
     pTextComponent->setFont(OGetFont(font));
     pTextComponent->setText(text);

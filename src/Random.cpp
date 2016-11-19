@@ -77,13 +77,13 @@ namespace onut
         dist *= dist;
         dist = 1 - dist;
         dist *= radius;
-        float angle = ORandFloat(0.0f, DirectX::XM_2PI);
+        float angle = ORandFloat(0.0f, OPIx2);
         return{center.x + cosf(angle) * dist, center.y + sinf(angle) * dist};
     }
 
     Vector2 randCircleEdge(const Vector2& center, float radius)
     {
-        float angle = ORandFloat(0.0f, DirectX::XM_2PI);
+        float angle = ORandFloat(0.0f, OPIx2);
         return{center.x + cosf(angle), center.y + sinf(angle)};
     }
 

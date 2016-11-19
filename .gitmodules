@@ -1,0 +1,3 @@
+[submodule "include/xo-math"]
+	path = include/xo-math
+	url = https://github.com/Daivuk/xo-math.git

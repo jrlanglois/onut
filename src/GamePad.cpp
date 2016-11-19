@@ -34,7 +34,7 @@ namespace onut
                 static_cast<float>(static_cast<double>(m_currentState.Gamepad.sThumbLX) / 32768.0),
                 -static_cast<float>(static_cast<double>(m_currentState.Gamepad.sThumbLY) / 32768.0)};
 
-            float len = m_cachedLeftThumb.Length();
+            float len = m_cachedLeftThumb.Magnitude();
             if (len <= deadZone)
             {
                 m_cachedLeftThumb = {};
@@ -54,7 +54,7 @@ namespace onut
                 static_cast<float>(static_cast<double>(m_currentState.Gamepad.sThumbRX) / 32768.0),
                 -static_cast<float>(static_cast<double>(m_currentState.Gamepad.sThumbRY) / 32768.0)};
 
-            float len = m_cachedRightThumb.Length();
+            float len = m_cachedRightThumb.Magnitude();
             if (len <= deadZone)
             {
                 m_cachedRightThumb = {};

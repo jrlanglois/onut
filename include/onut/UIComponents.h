@@ -21,7 +21,7 @@ namespace onut
             WordWrap = 0x04
         };
         Color color = Color::White;
-        onut::Align align;
+        Vector2 align;
         Vector4 padding;
         std::string typeFace;
         float size;
@@ -59,7 +59,7 @@ namespace onut
     {
     public:
         UIScale9Component background;
-        onut::Align align;
+        Vector2 align;
         Rect rect;
         UIIconComponent() : align(onut::Align::TopLeft) {}
     };

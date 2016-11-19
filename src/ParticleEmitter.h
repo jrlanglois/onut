@@ -29,7 +29,7 @@ namespace onut
         void setRenderEnabled(bool renderEnabled);
         bool getRenderEnabled() const { return m_renderEnabled; }
 
-        Vector3 getPosition() const { return m_transform.Translation(); }
+        Vector3 getPosition() const { return m_transform.GetTranslation(); }
         const OParticleEmitterDescRef& getDesc() const { return m_pDesc; }
 
     private:

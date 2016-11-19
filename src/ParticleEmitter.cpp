@@ -128,7 +128,7 @@ namespace onut
         auto pParticle = m_pParticleSystemManager->allocParticle();
         if (pParticle)
         {
-            Vector3 spawnPos = m_transform.Translation();
+            Vector3 spawnPos = m_transform.GetTranslation();
             Vector3 up = m_transform.AxisZ();
             Vector3 right = m_transform.AxisX();
 

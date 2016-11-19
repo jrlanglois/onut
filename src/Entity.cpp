@@ -86,7 +86,8 @@ namespace onut
         {
             parentWorld = pParent->getWorldTransform();
         }
-        auto invParentWorld = parentWorld.Invert();
+        Matrix invParentWorld;
+        parentWorld.GetInverse(invParentWorld);
         m_localTransform = worldTransform * invParentWorld;
         m_isWorldDirty = true;
     }
