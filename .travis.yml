@@ -25,13 +25,6 @@ before_install:
         libjack-dev
     - sudo apt-get update --fix-missing
     - sudo apt-get update -qq
-    - pwd
-    - ls -d */
-    - cd ..
-    - pwd
-    - git clone --depth=1 --branch=master https://github.com/Daivuk/onut.git onut
-    - pwd
-    - ls -d */
 
 compiler:
     - clang
