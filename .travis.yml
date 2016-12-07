@@ -11,6 +11,7 @@ before_install:
     - sudo apt-get update --fix-missing
     - sudo apt-get install -qq
         clang
+        build-essential
         libfreetype6-dev
         libegl1-mesa
         libegl1-mesa-dev
