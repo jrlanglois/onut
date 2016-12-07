@@ -12,7 +12,9 @@ before_install:
     - sudo apt-get install -qq
         clang
         libfreetype6-dev
+        libegl1-mesa
         libegl1-mesa-dev
+        libgles2-mesa-dev
         libx11-dev
         libxinerama-dev
         libxrandr-dev
