@@ -15,6 +15,7 @@ before_install:
         libfreetype6-dev
         libegl1-mesa
         libegl1-mesa-dev
+        libgles1-mesa-dev
         libgles2-mesa-dev
         libx11-dev
         libxinerama-dev
@@ -41,4 +42,4 @@ branches:
 
 script:
     - cmake .
-    - make -j4
+    - make
